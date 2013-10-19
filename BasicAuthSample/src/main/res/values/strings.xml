@@ -6,5 +6,6 @@
     <string name="action_settings">Settings</string>
     <string name="default_webview">Default WebView</string>
     <string name="customized_webview">Customized WebView</string>
+    <string name="message">http://basic-auth-sample.herokuapp.com/</string>
 
 </resources>
