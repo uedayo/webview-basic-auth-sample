@@ -4,7 +4,7 @@
     <string name="app_name">BasicAuthSample</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
-    <string name="open_default_webview">Open default WebView</string>
-    <string name="open_customized_webview">Open customized WebView</string>
+    <string name="default_webview">Default WebView</string>
+    <string name="customized_webview">Customized WebView</string>
 
 </resources>

@@ -69,8 +69,10 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.default_webview_button:
                 startDefaultWebView();
+                break;
             case R.id.customised_webview_button:
                 startCustomizedWebView();
+                break;
         }
     }
 
@@ -80,7 +82,7 @@ public class MainActivity extends ActionBarActivity implements View.OnClickListe
     }
 
     private void startCustomizedWebView() {
-        Intent intent = new Intent(MainActivity.this, DefaultWebViewActivity.class);
+        Intent intent = new Intent(MainActivity.this, CustomizedWebViewActivity.class);
         startActivity(intent);
     }
 
