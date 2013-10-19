@@ -1,17 +1,22 @@
 package com.uedayo.android.basicauthsample;
 
+import android.content.Intent;
 import android.support.v7.app.ActionBarActivity;
 import android.support.v7.app.ActionBar;
 import android.support.v4.app.Fragment;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.os.Build;
+import android.widget.Button;
 
-public class MainActivity extends ActionBarActivity {
+public class MainActivity extends ActionBarActivity implements View.OnClickListener {
+    private Button defaultWebViewButton;
+    private Button customizedWebViewButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -23,6 +28,19 @@ public class MainActivity extends ActionBarActivity {
                     .add(R.id.container, new PlaceholderFragment())
                     .commit();
         }
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        setListener();
+    }
+
+    private void setListener() {
+        defaultWebViewButton = (Button)findViewById(R.id.default_webview_button);
+        defaultWebViewButton.setOnClickListener(this);
+        customizedWebViewButton = (Button)findViewById(R.id.customised_webview_button);
+        customizedWebViewButton.setOnClickListener(this);
     }
 
 
@@ -44,6 +62,26 @@ public class MainActivity extends ActionBarActivity {
                 return true;
         }
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()) {
+            case R.id.default_webview_button:
+                startDefaultWebView();
+            case R.id.customised_webview_button:
+                startCustomizedWebView();
+        }
+    }
+
+    private void startDefaultWebView() {
+        Intent intent = new Intent(MainActivity.this, DefaultWebViewActivity.class);
+        startActivity(intent);
+    }
+
+    private void startCustomizedWebView() {
+        Intent intent = new Intent(MainActivity.this, DefaultWebViewActivity.class);
+        startActivity(intent);
     }
 
     /**
